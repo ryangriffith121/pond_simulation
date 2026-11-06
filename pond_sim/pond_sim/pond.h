@@ -23,7 +23,7 @@ public:
 	void update();
 	void draw();
 
-	void addFish();
+	void addFish(const std::string&);
 	void removeFish(int fishIndex);
 	void printFishList();
 
