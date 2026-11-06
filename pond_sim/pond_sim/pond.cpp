@@ -21,7 +21,7 @@ public:
 	void addFish(std::string name) {
 		Fish newFish = Fish{};
 		
-		fishList.push_back(newFish)
+		fishList.push_back(newFish);
 
 		std::cout << "Added Fish " << name << " from pond" << std::endl;
 	};
