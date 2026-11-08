@@ -4,6 +4,8 @@
 #include <vector>
 #include <cmath>
 
+#include <SFML/Graphics.hpp>
+
 class Fish {
 private:
 
@@ -14,6 +16,17 @@ private:
 	int speed;
 	int size;
 	std::vector<int> color;
+
+	std::vector<sf::CircleShape> circles;
+	std::vector<sf::CircleShape> polygons;
+
+	const int body1Size = 1;
+	const int body2Size = 2;
+	const int body3Size = 3;
+	const int eyeSize = size / 8;
+	const int pupilSize = 1.5;
+	const int bigFinSize = 10;
+	const int smallFinSize = 12;
 
 public:
 
