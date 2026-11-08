@@ -20,8 +20,8 @@ public:
 	Pond();
 	Pond(int xCoordinate, int yCoordinate, int pondWidth, int pondHeight);
 
-	void update();
-	void draw();
+	void update(float deltaTime);
+	void draw(float deltaTime);
 
 	void addFish(const std::string&);
 	void removeFish(int fishIndex);

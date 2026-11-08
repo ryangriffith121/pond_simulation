@@ -1,6 +1,8 @@
 #pragma once
 
 #include <string>
+#include <vector>
+#include <cmath>
 
 class Fish {
 private:
@@ -11,22 +13,22 @@ private:
 	int direction;
 	int speed;
 	int size;
-	int color[3];
+	std::vector<int> color;
 
 public:
 
 	Fish();
-	Fish(int xCoordinate, int yCoordinate, std::string fishName, int fishSize, int& fishColor);
+	Fish(int xCoordinate, int yCoordinate, std::string fishName, int fishSize, std::vector<int> fishColor);
 
-	void update();
-	void draw();
+	void update(float deltaTime);
+	void draw(float deltaTime);
 
 	int getX();
 	int getY();
 	int getDirection();
 	int getSpeed();
 	int getSize();
-	int getColor();
+	std::vector<int> getColor();
 	std::string getName();
 
 };

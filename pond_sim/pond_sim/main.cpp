@@ -41,27 +41,6 @@ int main()
 
     while (window.isOpen())
     {
-        // --- Events ---
-        while (const std::optional event = window.pollEvent())
-        {
-            if (event->is<sf::Event::Closed>())
-                window.close();
-
-            if (const auto* key = event->getIf<sf::Event::KeyPressed>())
-            {
-                if (key->code == sf::Keyboard::Key::Escape)
-                    window.close();
-                if (key->code == sf::Keyboard::Key::Space)
-                    followMouse = !followMouse;
-            }
-
-            if (const auto* click = event->getIf<sf::Event::MouseButtonPressed>())
-            {
-                if (click->button == sf::Mouse::Button::Left)
-                    box.setPosition(sf::Vector2f(click->position));   // move box to click
-            }
-        }
-
         // --- Update ---
         float dt = clock.restart().asSeconds();
         sf::Vector2f move(0.f, 0.f);

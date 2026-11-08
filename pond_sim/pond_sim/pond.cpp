@@ -9,6 +9,14 @@ Pond::Pond(int xCoordinate, int yCoordinate, int pondWidth, int pondHeight) {
 	height = pondHeight;
 }
 
+void Pond::update(float deltaTime) {
+
+}
+
+void Pond::draw(float deltaTime) {
+
+}
+
 void Pond::addFish(const std::string& name) {
 	Fish newFish = Fish{};
 	
@@ -32,7 +40,7 @@ void Pond::printFishList() {
 					", Y: " << fish.getY() <<
 					", Direction:  " << fish.getDirection() <<
 					", Size: " << fish.getSize() <<
-					", Color: " << fish.getColor() <<
+					", Color: " << fish.getColor()[0] << fish.getColor()[1] << fish.getColor()[2] <<
 					std::endl;
 	}
 }
