@@ -9,11 +9,11 @@
 class Pond {
 private:
 
-	int x;
-	int y;
-	int width;
-	int height;
-	std::vector<Fish> fishList;
+	int x = 0;
+	int y = 0;
+	int width = 0;
+	int height = 0;
+	std::vector<Fish> fishList = {};
 
 public:
 
@@ -23,7 +23,7 @@ public:
 	void update(float deltaTime);
 	void draw(float deltaTime);
 
-	void addFish(const std::string&);
+	void addFish(int xCoordinate, int yCoordinate, const std::string fishName, int fishSize, std::vector<int> fishColor);
 	void removeFish(int fishIndex);
 	void printFishList();
 

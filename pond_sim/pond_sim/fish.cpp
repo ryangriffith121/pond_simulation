@@ -17,16 +17,21 @@ void Fish::update(float deltaTime) {
 }
 
 void Fish::draw(float deltaTime) {
-	sf::CircleShape eye1(eyeSize);
-	sf::CircleShape pupil1(eyeSize / pupilSize);
+	sf::CircleShape eye1(size / eyeSize);
+	sf::CircleShape pupil1((size / eyeSize) / pupilSize);
 
-	sf::CircleShape eye2(eyeSize);
-	sf::CircleShape pupil2(eyeSize / pupilSize);
+	sf::CircleShape eye2(size / eyeSize);
+	sf::CircleShape pupil2((size / eyeSize) / pupilSize);
 
-	eye1.setScale({ 1.f, 0.6 });
-	pupil1.setScale({ 1.f, 0.6 });
-	eye2.setScale({ 1.f, 0.6 });
-	pupil1.setScale({ 1.f, 0.6 });
+	eye1.setScale({ 1.f, 0.6f });
+	pupil1.setScale({ 1.f, 0.6f });
+	eye2.setScale({ 1.f, 0.6f });
+	pupil1.setScale({ 1.f, 0.6f });
+
+	eye1.setRotation(sf::degrees(30.f));
+	pupil1.setRotation(sf::degrees(30.f));
+	eye2.setRotation(sf::degrees(-30.f));
+	pupil2.setRotation(sf::degrees(-30.f));
 
 	sf::CircleShape body1(size / body1Size);
 	sf::CircleShape body2(size / body2Size);
@@ -34,13 +39,18 @@ void Fish::draw(float deltaTime) {
 
 	sf::CircleShape bigFin1(bigFinSize);
 	sf::CircleShape bigFin2(bigFinSize);
-	sf::CircleShape bigSmall1(smallFinSize);
-	sf::CircleShape bigSmall2(smallFinSize);
+	sf::CircleShape smallFin1(smallFinSize);
+	sf::CircleShape smallFin2(smallFinSize);
 
-	bigFin1.setScale({ 1.f, 0.75 });
-	bigFin2.setScale({ 1.f, 0.75 });
-	bigSmall1.setScale({ 1.f, 0.6 });
-	bigSmall2.setScale({ 1.f, 0.6 });
+	bigFin1.setScale({ 1.f, 0.75f });
+	bigFin2.setScale({ 1.f, 0.75f });
+	smallFin1.setScale({ 1.f, 0.6f });
+	smallFin2.setScale({ 1.f, 0.6f });
+
+	bigFin1.setRotation(sf::degrees(40.f));
+	bigFin2.setRotation(sf::degrees(-40.f));
+	smallFin1.setRotation(sf::degrees(50.f));
+	smallFin2.setRotation(sf::degrees(-50.f));
 
 	circles.push_back(body1);
 	circles.push_back(body2);
@@ -59,7 +69,7 @@ int Fish::getY() {
 	return y;
 }
 
-int Fish::getDirection() {
+float Fish::getDirection() {
 	return direction;
 }
 

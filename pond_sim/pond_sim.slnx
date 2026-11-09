@@ -3,5 +3,5 @@
     <Platform Name="x64" />
     <Platform Name="x86" />
   </Configurations>
-  <Project Path="pond_sim/pond_sim.vcxproj" />
+  <Project Path="pond_sim/pond_sim.vcxproj" Id="11e9f5b0-7f45-4532-aaf4-08ed8da1d5ed" />
 </Solution>

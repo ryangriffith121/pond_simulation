@@ -9,24 +9,24 @@
 class Fish {
 private:
 
-	std::string name;
-	int x;
-	int y;
-	int direction;
-	int speed;
-	int size;
-	std::vector<int> color;
+	std::string name = "";
+	int x = 0;
+	int y = 0;
+	float direction = 0;
+	int speed = 0;
+	int size = 0;
+	std::vector<int> color = {255, 0, 0};
 
-	std::vector<sf::CircleShape> circles;
-	std::vector<sf::CircleShape> polygons;
+	std::vector<sf::CircleShape> circles = {};
+	std::vector<sf::CircleShape> polygons = {};
 
-	const int body1Size = 1;
-	const int body2Size = 2;
-	const int body3Size = 3;
-	const int eyeSize = size / 8;
-	const int pupilSize = 1.5;
-	const int bigFinSize = 10;
-	const int smallFinSize = 12;
+	static constexpr float body1Size = 1.f;
+	static constexpr float body2Size = 2.f;
+	static constexpr float body3Size = 3.f;
+	static constexpr float eyeSize = 8.f;
+	static constexpr float pupilSize = 1.5f;
+	static constexpr float bigFinSize = 10.f;
+	static constexpr float smallFinSize = 12.f;
 
 public:
 
@@ -38,7 +38,7 @@ public:
 
 	int getX();
 	int getY();
-	int getDirection();
+	float getDirection();
 	int getSpeed();
 	int getSize();
 	std::vector<int> getColor();

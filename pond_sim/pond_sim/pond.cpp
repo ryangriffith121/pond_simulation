@@ -10,19 +10,23 @@ Pond::Pond(int xCoordinate, int yCoordinate, int pondWidth, int pondHeight) {
 }
 
 void Pond::update(float deltaTime) {
-
+	for (Fish fish : fishList) {
+		fish.update(deltaTime);
+	}
 }
 
 void Pond::draw(float deltaTime) {
-
+	for (Fish fish : fishList) {
+		fish.draw(deltaTime);
+	}
 }
 
-void Pond::addFish(const std::string& name) {
-	Fish newFish = Fish{};
+void Pond::addFish(int xCoordinate, int yCoordinate, const std::string fishName, int fishSize, std::vector<int> fishColor) {
+	Fish newFish = Fish{xCoordinate, yCoordinate, fishName, fishSize, fishColor};
 	
 	fishList.push_back(newFish);
 
-	std::cout << "Added Fish " << name << " from pond" << std::endl;
+	std::cout << "Added fish '" << fishName << "' to pond" << std::endl;
 }
 
 void Pond::removeFish(int fishIndex) {
