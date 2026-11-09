@@ -21,7 +21,7 @@ public:
 	Pond(int xCoordinate, int yCoordinate, int pondWidth, int pondHeight);
 
 	void update(float deltaTime);
-	void draw(float deltaTime);
+	void draw(float deltaTime, sf::RenderWindow& surface);
 
 	void addFish(int xCoordinate, int yCoordinate, const std::string fishName, int fishSize, std::vector<int> fishColor);
 	void removeFish(int fishIndex);
